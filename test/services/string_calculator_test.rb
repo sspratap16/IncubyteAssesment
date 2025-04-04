@@ -7,6 +7,11 @@ class StringCalculatorTest < ActiveSupport::TestCase
 
   def test_add_returns_number_for_single_number_string
     assert_equal 1, StringCalculator.add("1")
-    assert_equal 5, StringCalculator.add("5") # Add another case
+    assert_equal 5, StringCalculator.add("5")
+  end
+
+  def test_add_returns_sum_for_two_comma_separated_numbers
+    assert_equal 6, StringCalculator.add("1,5")
+    assert_equal 30, StringCalculator.add("10,20")
   end
 end
